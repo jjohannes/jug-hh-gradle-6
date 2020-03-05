@@ -133,7 +133,7 @@ include::chapters/jvm.adoc[]
 
 == Thank you
 
-Slides – https://github.com/jjohannes/jug-hh-gradle-6[github.com/jjohannes/jug-hh-gradle-6]
+Slides – https://jjohannes.github.io/jug-hh-gradle-6/#/[jjohannes.github.io/jug-hh-gradle-6]
 
 Demo – https://github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6[github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6]
 
