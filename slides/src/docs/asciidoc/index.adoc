@@ -1,0 +1,144 @@
+:revnumber: {project-version}
+:example-caption!:
+ifndef::imagesdir[:imagesdir: images]
+ifndef::sourcedir[:sourcedir: ../java]
+:navigation:
+:menu:
+:status:
+:transition: none
+:title-slide-background-image: title.png
+:title-slide-transition: zoom
+:title-slide-transition-speed: fast
+:icons: font
+:revealjs_center: false
+:highlightjsdir: highlight
+
+= : Gradle 6 – Dependency-Management Reloaded
+
++++<h3>+++
++++<div style="font-size: 0.5em; padding-top:140px">+++
+Jendrik Johannes - Gradle Inc.
++++</div>+++
++++</h3>+++
+
+
+== Who is Gradle?
+
+image::gradle-staff-map.png[width=1000,height=0%]
+https://gradle.com/careers
+
+== What is Gradle?
+
+image::gradle-structure.png[width=1000,height=0%]
+
+Latest release of Gradle Build Tool is https://docs.gradle.org/6.2.2/release-notes.html[6.2.2] (6.3 RC1 coming soon)
+
+`./gradlew wrapper --gradle-version=6.2.2`
+
+== Agenda
+
+. API and implementation separation
+. Dependency constraints and platforms
+. Publishing and the Gradle Module Metadata format
+. Enrich existing Metadata with Rules
+. Test fixtures and feature variants
+. Java version support and other JVM languages
+
+== Today's Demo Project
+
+https://github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6[github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6]
+
+[plantuml, overview, png, width=800, height=0%]
+....
+scale 1600 width
+skinparam class {
+	ArrowColor Black
+}
+
+rectangle "App" <<Application>> {
+}
+
+rectangle "HelloJavaService" <<Component>> {
+}
+
+rectangle "HelloGroovyService" <<Component>> {
+}
+
+rectangle "HelloScalaService" <<Component>> {
+}
+
+rectangle "Data" <<Component>> {
+}
+
+rectangle "Platform" <<Component>> #lightyellow {
+}
+
+rectangle "Guava" <<Component>> #lightgrey {
+}
+
+rectangle "Junit5" <<Component>> #lightgrey {
+}
+
+App --> HelloJavaService
+App --> HelloGroovyService
+App --> HelloScalaService
+HelloJavaService --> Data
+HelloGroovyService --> Data
+HelloScalaService --> Data
+
+HelloJavaService --> Guava
+HelloJavaService --> Junit5
+
+App -.-> Platform
+HelloJavaService -.-> Platform
+HelloGroovyService -.-> Platform
+HelloScalaService -.-> Platform
+Data -.-> Platform
+....
+
+include::chapters/api-implementation-separation.adoc[]
+
+include::chapters/constraints-and-platforms.adoc[]
+
+include::chapters/gradle-module-metadata.adoc[]
+
+include::chapters/metadata-rules.adoc[]
+
+include::chapters/test-fixtures-and-variants.adoc[]
+
+include::chapters/jvm.adoc[]
+
+== More Resources (reading)
+
+* https://docs.gradle.org/6.2.2/userguide/userguide.html[Gradle User Manual] with more content on https://docs.gradle.org/6.2.2/userguide/core_dependency_management.html[dependency management]
+* Blog posts about dependency management topics
+** https://blog.gradle.org/avoiding-dependency-hell-gradle-6[Avoiding dependency hell with Gradle 6]
+** https://blog.gradle.org/alignment-with-gradle-module-metadata[Automatically align Dependencies with Platforms and Gradle Metadata]
+** https://blog.gradle.org/addressing-logging-complexity-capabilities[Addressing the complexity of Java logging with capabilities]
+** https://blog.gradle.org/optional-dependencies[Optional dependencies are not optional]
+** https://blog.gradle.org/guava[Why libraries like Guava need more than POMs]
+
+
+== More Resources (watching)
+
+* Recorded dependency management webcasts
+** https://gradle.com/blog/dependency-management-fundamentals/[Dependency Management Fundamentals]
+** https://gradle.com/blog/dependency-management-part-2-handling-conflicts/[Handling Conflicts and Customizing Resolution]
+** https://gradle.com/blog/dependency-management-with-gradle-part-3-publishing-and-release-strategies/[Publishing and Release Strategies]
+** https://gradle.com/blog/whats-new-in-gradle-6.0/[What’s New in Gradle 6.0]
+* Regular online intro and advanced trainings  - https://gradle.com/training/[gradle.com/training]
+
+* Gradle Module Metadata and Maven projects?
+** https://github.com/jjohannes/gradle-module-metadata-maven-plugin
+
+== Thank you
+
+Slides – https://github.com/jjohannes/jug-hh-gradle-6[github.com/jjohannes/jug-hh-gradle-6]
+
+Demo – https://github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6[github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6]
+
+Questions? https://discuss.gradle.org or ping me on Twitter `@jeoj`
+
+include::chapters/variants.adoc[]
+
+include::chapters/strict-versions.adoc[]
