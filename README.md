@@ -2,7 +2,7 @@
 
 Slides and demo of [Java User Group Hamburg talk](https://www.meetup.com/de-DE/jug-hamburg/events/268613960/).
 
-**Demo Project**: [demos/hello-gradle-6](demos/hello-gradle-6) 
+**Demo Project**: [hello-gradle-6](hello-gradle-6) 
 
 Die Verwaltung von Abhängigkeiten (Dependencies) in Java-, Groovy-, Kotlin- oder Scala-Projekte ist ein wichtiges Feature aller bekannten Build-Tools im JVM-Ökosystem.
 Allerdings haben die Tools mit Einschränkungen zu kämpfen, die das modellieren vieler Anwendungsfälle in diesem Bereich schwierig oder unmöglich machen – beispielsweise mit der Annahmen, dass jedes Modul im Prinzip aus einer JAR-Datei besteht.
