@@ -137,7 +137,7 @@ Slides – https://jjohannes.github.io/jug-hh-gradle-6/#/[jjohannes.github.io/ju
 
 Demo – https://github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6[github.com/gradle/jug-hh-gradle-6/tree/master/hello-gradle-6]
 
-Questions? https://discuss.gradle.org or ping me on Twitter `@jeoj`
+Questions? https://discuss.gradle.org or ping me on Matodon `@jendrik@mastodon.social`
 
 include::chapters/variants.adoc[]
 
